@@ -224,7 +224,7 @@ def maybe_tunnel():
                 cf,
             )
             os.chmod(cf, 0o755)
-        subprocess.Popen([cf, "tunnel", "--no-autoupdate", "run", "--token", token])
+        subprocess.Popen([cf, "tunnel", "--no-autoupdate", "--protocol", "http2", "run", "--token", token])
         log("tunnel connector started")
     except Exception as e:
         log("tunnel start failed:", e)
